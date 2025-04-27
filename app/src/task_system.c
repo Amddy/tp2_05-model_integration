@@ -160,6 +160,8 @@ void task_system_update(void *parameters)
 				{
 					p_task_system_dta->flag = false;
 					put_event_task_actuator(EV_LED_XX_ON, ID_LED_A);
+					put_event_task_actuator(EV_LED_XX_BLINK, ID_LED_B);
+					put_event_task_actuator(EV_LED_XX_PULSE, ID_LED_C);
 					p_task_system_dta->state = ST_SYS_XX_ACTIVE;
 				}
 
@@ -171,6 +173,8 @@ void task_system_update(void *parameters)
 				{
 					p_task_system_dta->flag = false;
 					put_event_task_actuator(EV_LED_XX_OFF, ID_LED_A);
+					put_event_task_actuator(EV_LED_XX_OFF, ID_LED_B);
+					put_event_task_actuator(EV_LED_XX_OFF, ID_LED_C);
 					p_task_system_dta->state = ST_SYS_XX_IDLE;
 				}
 
