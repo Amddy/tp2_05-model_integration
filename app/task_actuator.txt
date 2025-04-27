@@ -1,0 +1,27 @@
+  task_actuator.c (task_actuator.h, task_actuator_attribute.h) 
+   Non-Blocking & Update By Time Code -> Actuator Modeling
+
+  task_actuator_interface.c (task_actuator_interface.h)
+   Non-Blocking Code
+
+task_actuator_attribute.h
+En este archivo se definen los tipos de datos y estructuras que requieren los
+otros dos archivos. Por ejemplo, la estructura task_actuator_dta_t, donde se guardan
+los datos del actuador durante la ejecución del programa.
+
+task_actuator_interface.c
+En este archivo se definen funciones que se utilizan en otros archivos del proyecto.
+Por ejemplo, se define la función put_event_task_actuator, que el sistema utiliza para
+enviar eventos al actuador.
+
+
+task_actuator.c
+En este archivo está el código principal del funcionamiento del actuador. La función
+task_actuator_init inicializa todas las variables que el actuador necesita, y la función
+task_actuator_update ejecuta la lógica que requiere el actuador durante su funcionamiento.
+Por ejemplo, en este último está el switch donde se verifican los eventos que
+ocurrieron en el actuador y realiza las transiciones que corresponden, según lo
+indicado en la tabla de transición de estados. Además, en una variable del tipo
+task_actuator_dta_t define los parámetros de funcionamiento del actuador.
+
+...

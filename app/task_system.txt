@@ -1,0 +1,29 @@
+  task_system.c (task_system.h, task_system_attribute.h) 
+   Non-Blocking Code -> System Modeling
+  
+  task_system_interface.c (task_system_interface.h)
+   Non-Blocking Code
+
+...
+
+task_system_attribute.h
+En este archivo se definen los tipos de datos y estructuras que requieren los
+otros dos archivos. Por ejemplo, la estructura task_system_dta_t, donde se guardan
+los datos del sistema durante la ejecución del programa.
+
+task_system_interface.c
+En este archivo se definen funciones que se utilizan en otros archivos del proyecto.
+Por ejemplo, se define la función put_event_task_system, que el sensor utiliza para
+enviar eventos al sistema, o la función get_event_task_system que el sistema
+utiliza para obtener los eventos que ocurrieron.
+
+task_system.c
+En este archivo está el código principal del funcionamiento del sistema. La función
+task_system_init inicializa todas las variables que el sistema necesita, y la función
+task_system_update ejecuta la lógica que requiere el sistema durante su funcionamiento.
+Por ejemplo, en este último está el switch donde se verifican los eventos que
+ocurrieron en el sistema y realiza las transiciones que corresponden, según lo
+indicado en la tabla de transición de estados. Además, en una variable del tipo
+task_system_dta_t define los parámetros de funcionamiento del sistema.
+
+...
